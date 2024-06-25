@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ProductDetails from "./ProductDetails";
 
-function Home({products}) {
+function Home({products /*, productsToDisplay */}) {
     return (
         <div
         style = {{display: "flex", flexWrap: "wrap", justifyContent: "center" }}
@@ -40,7 +41,12 @@ function Home({products}) {
         
           );
         })}
+
+        <ProductDetails products={products} />
+        
+        {/*<ProductDetails productsToDisplay={productsToDisplay} />*/}
     </div>
+    
     );
 }
 export default Home;

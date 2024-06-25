@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 function App() {
   const [token, setToken] = useState(null);
   const [products, setProducts] = useState([]);
+  //const [productsToDisplay, setproductsToDisplay] = useState([]);
   useEffect(() => {
     axios("https://fakestoreapi.com/products")
       .then((response) => {
@@ -28,7 +29,8 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar products={products} setProducts={setProducts} /> { /* setproductsToDisplay={setproductsToDisplay}  */ }
+      <Home setProducts={setProducts} products={products} /> {  /* productsToDisplay={productsToDisplay} setproductsToDisplay={setproductsToDisplay}*/ }
       
         <Routes>
 
