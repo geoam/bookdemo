@@ -10,10 +10,16 @@ const Navbar = () => {
             React Books App</h1>
         </div>
         <div>
-          <Link to = "/favorites">
+            <Link to = "/favorites">
             <h3>Your Favorites</h3>
             </Link>
-            </div>
+            <Link to = "/Register">
+            <h3>Register</h3>
+            </Link>
+            <Link to = "/Login">
+            <h3>Login</h3>
+            </Link>
+        </div>
     </div>
   );
 };

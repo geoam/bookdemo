@@ -14,10 +14,6 @@ const Favorites = () => {
   };
 
 
-
-
-
-
   return (
     <div className='favorites'>
          { favorites.length > 0 ? favorites.map((book)=> (

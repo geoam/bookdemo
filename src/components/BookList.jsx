@@ -42,7 +42,7 @@ const BookList = () => {
                                 src={book.image_url} 
                                 alt="#" 
                                 // eslint-disable-next-line no-template-curly-in-string
-                                onClick = {() => navigate('/books/${book.id}')}
+                                onClick = {() => navigate('/books')}
                             />
                         </div>
 
