@@ -22,7 +22,7 @@ function Login({ token, setToken }) {
         console.log(res);
         setToken(res.data.token);
         localStorage.setItem("token", res.data.token);
-        navigate("../");
+        navigate("../userlogin");
         /*   if (res.data.token) {
           setToken(res.data.token);
           localStorage.setItem("token", res.data.token);
@@ -33,7 +33,7 @@ function Login({ token, setToken }) {
   };
 
    if (token) {
-    navigate("/");
+    navigate("/userlogin");
   } 
 
   return (

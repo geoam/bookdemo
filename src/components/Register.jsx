@@ -25,7 +25,7 @@ function Register({ setToken, token }) {
         console.log(res);
         setToken(res.data.token);
         localStorage.setItem("token", res.data.token);  
-        navigate("../");
+        navigate("../userlogin");
        
 
        /*  if (res.data.token) {
@@ -38,7 +38,7 @@ function Register({ setToken, token }) {
   };
 
   if (token) {
-    navigate("/");
+    navigate("/userlogin");
   }
 
   return (
