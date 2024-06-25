@@ -19,7 +19,7 @@ const Favorites = () => {
          { favorites.length > 0 ? favorites.map((book)=> (
                     <div key={book.id} className="book">
                         <div><h4>{book.title}</h4></div>
-                        <div><img src={book.image_url} alt="#"/></div>
+                        <div><img src={book.image} alt="#"/></div>
 
                         <div>
                             {favoritesChecker(book.id) ? 

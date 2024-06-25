@@ -81,18 +81,6 @@ function Register({ setToken, token }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-    {/*     <label>
-          Username:
-          <input type="text" placeholder="username" onChange={(e) => setUsername(e.target.value)} />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password" placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label> */}
-        {/**1. Add a button to submit the form - DONE*/}
         <button type="submit">Sign Up</button>
         <p> Already have an account? Login</p>
       </form>

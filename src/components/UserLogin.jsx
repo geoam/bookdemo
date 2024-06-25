@@ -6,9 +6,9 @@ import { useAppContext } from "./context/appContext";
 import { useNavigate } from 'react-router-dom';
 
 
-const BookList = () => {
+const UserLogin = () => {
 
-    const [books, setBooks] = useState([]);
+    const [products, setProducts] = useState([]);
 
     const{ favorites, addToFavorites, removeFromFavorites } = useAppContext();
 
@@ -17,7 +17,7 @@ const BookList = () => {
     //console.log("favorites are", favorites);
 
     const favoritesChecker = (id) => {
-        const boolean = favorites.some((book)=> book.id === id);
+        const boolean = favorites.some((item)=> item.id === id);
         return boolean;
     };
 
@@ -27,7 +27,7 @@ const BookList = () => {
         .get(API_URL)
         .then (res=> {
             console.log(res.data)
-            setBooks(res.data)
+            setProducts(res.data)
         }).catch(err=>console.log(err))
 
     }, []);
@@ -35,22 +35,22 @@ const BookList = () => {
 
     return (
         <div className="book-list">
-            {books.map((book)=> (
-                    <div key={book.id} className="book">
-                        <div><h4>{book.title}</h4></div>
+            {products.map((item)=> (
+                    <div key={item.id} className="book">
+                        <div><h4>{item.title}</h4></div>
                         <div><img 
-                                src={book.image_url} 
+                                src={item.image} 
                                 alt="#" 
                                 // eslint-disable-next-line no-template-curly-in-string
-                                onClick = {() => navigate('/books')}
+                                onClick = {() => navigate('/products')}
                             />
                         </div>
 
                         <div>
-                            {favoritesChecker(book.id) ? 
-                            <button onClick={() => removeFromFavorites(book.id)}>
+                            {favoritesChecker(item.id) ? 
+                            <button onClick={() => removeFromFavorites(item.id)}>
                                 Remove from Favorites
-                            </button> : (<button onClick={()=> addToFavorites(book)}>Add to Favorites </button>)}
+                            </button> : (<button onClick={()=> addToFavorites(item)}>Add to Favorites </button>)}
                             
                           
                         </div>
@@ -64,4 +64,4 @@ const BookList = () => {
 )}
 
 
-export default BookList
+export default UserLogin;
