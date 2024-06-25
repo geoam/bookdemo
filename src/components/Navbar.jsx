@@ -7,15 +7,24 @@ const Navbar = () => {
     <div className="navbar">
         <div>
         <h1>
-            React Books App</h1>
+            ReactStore</h1>
+          
         </div>
         <div>
+            <Link to = "*">
+            <h3>Home</h3>
+            </Link></div>
+            <div>
             <Link to = "/favorites">
             <h3>Your Favorites</h3>
-            </Link>
+            </Link></div>
+            <div>
+              <input type="text" placeholder="Search for items.." />
+              </div>
+              <div>
             <Link to = "/Register">
             <h3>Register</h3>
-            </Link>
+            </Link></div><div>
             <Link to = "/Login">
             <h3>Login</h3>
             </Link>
