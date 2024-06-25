@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
 
-function Home({products /*, productsToDisplay */}) {
+function Home({products}) {
     return (
         <div
         style = {{display: "flex", flexWrap: "wrap", justifyContent: "center" }}
@@ -43,7 +43,7 @@ function Home({products /*, productsToDisplay */}) {
         })}
 
         <ProductDetails products={products} />
-        
+
         {/*<ProductDetails productsToDisplay={productsToDisplay} />*/}
     </div>
     

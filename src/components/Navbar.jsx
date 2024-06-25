@@ -1,16 +1,16 @@
 import React from 'react';
-//import { useState } from "react";
+import { useState } from "react";
 import '../App';
 import { Link } from "react-router-dom";
 
-const Navbar = ({ products , setProducts /*, productsToDisplay, setProductsToDisplay (all comment: kept for references) */ }) => {
-  ////const [products, setProducts] = useState([]);
+const Navbar = ({products, setProducts}) => {
+  //const [products, setProducts] = useState([]);
   const handleSearch = (e) => {
 
     const filtered = products.filter((item) => 
       item.title.toLowerCase().includes(e.target.value.toLowerCase())
   );
-    //console.log(filtered);
+    console.log(filtered);
     setProducts(filtered);
     //setProductsToDisplay(filtered);
   };
