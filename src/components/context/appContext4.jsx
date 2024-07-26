@@ -18,7 +18,6 @@ export const useAppContext = () => {
 
 const AppContextProvider = ({ children }) => {
 
-    const [cart, setCart] = useState([]);
     const [favorites, setFavorites] = useState([]);
 
     const addToFavorites = (book) => {
@@ -36,24 +35,8 @@ const AppContextProvider = ({ children }) => {
         setFavorites(newFavorites);
     };
 
-
-    const addToCart = (book) => {
-        const oldCart = [...cart];
-
-        const newCart = oldCart.concat(book);
-
-        setCart(newCart);
-    };
-
-    const removeFromCart = (id) => {
-        const oldCart = [...cart];
-        const newCart = oldCart.filter((book)=> book.id !== id);
-
-        setCart(newCart);
-    };
-
     return(
-        <AppContext.Provider value={ {cart, favorites, addToCart, removeFromCart, addToFavorites, removeFromFavorites}}>
+        <AppContext.Provider value={ {favorites, addToFavorites, removeFromFavorites}}>
             {children}
         </AppContext.Provider>
     )

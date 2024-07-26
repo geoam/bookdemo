@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import '../App';
 import { API_URL } from '../API';
 import axios from 'axios';
+//import { useAppContext } from "./context/appContext4";
 import { useAppContext } from "./context/appContext";
 import { useNavigate } from 'react-router-dom';
 
@@ -11,13 +12,19 @@ const UserLogin = () => {
     const [products, setProducts] = useState([]);
 
     const{ favorites, addToFavorites, removeFromFavorites } = useAppContext();
+    const{ cart, addToCart, removeFromCart } = useAppContext();
 
     const navigate = useNavigate();
 
-    //console.log("favorites are", favorites);
+    console.log("favorites are", favorites);
 
-    const favoritesChecker = (id) => {
+     const favoritesChecker = (id) => {
         const boolean = favorites.some((item)=> item.id === id);
+        return boolean;
+    };  
+
+    const cartChecker = (id) => {
+        const boolean = cart.some((item)=> item.id === id);
         return boolean;
     };
 
@@ -47,11 +54,15 @@ const UserLogin = () => {
                         </div>
 
                         <div>
-                            {favoritesChecker(item.id) ? 
+                              {favoritesChecker(item.id)? 
                             <button onClick={() => removeFromFavorites(item.id)}>
                                 Remove from Favorites
                             </button> : (<button onClick={()=> addToFavorites(item)}>Add to Favorites </button>)}
-                            
+
+                            {cartChecker(item.id)?
+                            <button onClick={() => removeFromCart(item.id)}>
+                                Remove from Cart
+                            </button> : (<button onClick={()=> addToCart(item)}>Add to Cart </button>)}
                           
                         </div>
                         </div>

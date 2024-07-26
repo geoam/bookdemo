@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function ProductDetails() {
     
@@ -47,6 +47,7 @@ function ProductDetails() {
                       }}  
                   />
               <p>{productData?.price}</p>
+              <Link to="/login">Login to Add to Cart</Link>
         </div>
         );
 }

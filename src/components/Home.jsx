@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
+import ProductCard from "./ProductCard";
 
 function Home({products}) {
     return (
@@ -42,7 +43,7 @@ function Home({products}) {
           );
         })}
 
-        <ProductDetails products={products} />
+        <ProductCard products={products} />
 
         {/*<ProductDetails productsToDisplay={productsToDisplay} />*/}
     </div>

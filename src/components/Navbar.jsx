@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react";
+//import { useState } from "react";
 import '../App';
 import { Link } from "react-router-dom";
 
@@ -30,6 +30,10 @@ const Navbar = ({products, setProducts}) => {
             <div>
             <Link to = "/favorites">
             <h3>Your Favorites</h3>
+            </Link></div>
+            <div>
+            <Link to = "/cart">
+            <h3>Your Cart</h3>
             </Link></div>
             <div>
               <input type="text" placeholder="Search for items.." onChange={handleSearch}/>
